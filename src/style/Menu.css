@@ -1,10 +1,9 @@
 .menu {
-    padding-top: 5rem;
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-start;
     flex-direction: column;
   }
   
@@ -170,6 +169,48 @@
     cursor: pointer;
   }
 
+  .pesanan{
+    position: fixed;
+    bottom: 4vw;
+    right: 4vw;
+    padding: 1em;
+    width: 20vw;
+    height: 40vh;
+    background-color: #eb4e23;
+    color: white;
+  }
+
+  .scroll-pesan{
+    height: 10vw;
+    overflow-y: scroll;
+  }
+
+  .menu-item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5em;
+  }
+
+  .pesanan-total{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pesanan-submit > button{
+    border: none;
+    width: 100%;
+    padding: .5em;
+    font-size: 1rem;
+    background-color: #080140;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out 3s;
+  }
+
+  .pesanan-submit > button:hover{
+    scale: 1.05;
+  }
   
   @media only screen and (max-width: 1000px) {
     .ProductCard {

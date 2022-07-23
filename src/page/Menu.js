@@ -6,6 +6,8 @@ import MenuCard from "../component/MenuCard";
 import "../style/Catbar.css";
 import { Link } from "react-router-dom";
 
+import { FaTrash } from "react-icons/fa";
+
 function Menu() {
   const [orders, setOrders] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -38,7 +40,32 @@ function Menu() {
 
   const totalPriceHandler = (orderList) => {
     let total = orderList.map((items) => items.quantity * items.price);
-    setTotalPrice(total[0]);
+    total = total.reduce((sum, a) => sum + a, 0);
+    setTotalPrice(total);
+  };
+
+  const deleteMenuHandler = (delIdx) => {
+    let ordersData = [];
+    for (let i = 0; i < orders.length; i++) {
+      if (i !== delIdx) {
+        console.log(i)
+        ordersData.push(orders[i]);
+      }
+    }
+
+    setOrders(ordersData);
+    totalPriceHandler(ordersData);
+  };
+
+  const commafy = (num) => {
+    var str = num.toString().split(".");
+    if (str[0].length >= 3) {
+      str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+    }
+    if (str[1] && str[1].length >= 3) {
+      str[1] = str[1].replace(/(\d{3})/g, "$1 ");
+    }
+    return str.join(".");
   };
 
   return (
@@ -73,6 +100,35 @@ function Menu() {
           );
         })}
       </div>
+      {orders.length > 0 && (
+        <div className="pesanan">
+          <h1>Total Pesanan</h1>
+          <div className="scroll-pesan">
+            {orders.map((items, i) => {
+              return (
+                <div className="menu-item">
+                  <div>
+                    {items.quantity} - {items.name}
+                  </div>
+                  <div>
+                    <FaTrash
+                      style={{ cursor: "pointer" }}
+                      onClick={() => deleteMenuHandler(i)}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="pesanan-total">
+            <h3>Subtotal</h3>
+            <p>Rp. {commafy(totalPrice)}</p>
+          </div>
+          <div className="pesanan-submit">
+            <button>Pesan</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
