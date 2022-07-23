@@ -15,7 +15,7 @@ app.get("/", cors(), async (req, res) => {
 });
 
 app.post("/add_order", async (req, res) => {
-  let newOrder = req.body["newOrder"];
+  let newOrder = req.body["allOrders"];
 
   let newOrderJSON = JSON.stringify(newOrder);
   fs.writeFile("./orders.json", newOrderJSON, "utf8", function (err) {

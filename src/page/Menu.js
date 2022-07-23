@@ -7,8 +7,13 @@ import "../style/Catbar.css";
 import { Link } from "react-router-dom";
 
 import { FaTrash } from "react-icons/fa";
+import axios from 'axios'
+
+import allOrders from '../backend/orders.json'
 
 function Menu() {
+  const [userName, setUserName] = useState("");
+  const [payment, setPayment] = useState("");
   const [orders, setOrders] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -48,7 +53,7 @@ function Menu() {
     let ordersData = [];
     for (let i = 0; i < orders.length; i++) {
       if (i !== delIdx) {
-        console.log(i)
+        console.log(i);
         ordersData.push(orders[i]);
       }
     }
@@ -56,6 +61,28 @@ function Menu() {
     setOrders(ordersData);
     totalPriceHandler(ordersData);
   };
+
+  const submitOrderHandler = async e => {
+    const userOrder = {
+        userName,
+        payment,
+        orders
+    }
+
+    allOrders.push(userOrder)
+    try{
+        await axios.post("http://localhost:3030/add_order", {
+            allOrders
+        })
+    } catch (err) {
+        console.log(err)
+        setTimeout(()=>{}, 300)
+    }
+    setOrders([])
+    setTotalPrice(0)
+    setUserName("")
+    setPayment("")
+  }
 
   const commafy = (num) => {
     var str = num.toString().split(".");
@@ -102,7 +129,7 @@ function Menu() {
       </div>
       {orders.length > 0 && (
         <div className="pesanan">
-          <h1>Total Pesanan</h1>
+          <h1>Pesanan</h1>
           <div className="scroll-pesan">
             {orders.map((items, i) => {
               return (
@@ -124,8 +151,14 @@ function Menu() {
             <h3>Subtotal</h3>
             <p>Rp. {commafy(totalPrice)}</p>
           </div>
+          <div className="input">
+            <input type="text" onChange={e => setUserName(e.target.value)} placeholder="Nama Pembeli" />
+          </div>
+          <div className="input">
+            <input type="text" onChange={e => setPayment(e.target.value)} placeholder="Jenis Pembayaran" />
+          </div>
           <div className="pesanan-submit">
-            <button>Pesan</button>
+            <button onClick={submitOrderHandler}>Pesan</button>
           </div>
         </div>
       )}
