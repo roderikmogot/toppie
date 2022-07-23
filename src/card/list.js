@@ -181,7 +181,7 @@ export const card =[
     {
         name: "Sprite",
         image: Sprite,
-        price: 10.000,
+        price: 10000,
         linkgfs: 'https://gofood.link/a/ED6BWwY',
         linkgfk: 'https://gofood.link/a/EDcwpHw',
         linksfs:'https://shopee.co.id/universal-link/now-food/dish/1254504/558544193976835?deep_and_deferred=1&shareChannel=copy_link',
