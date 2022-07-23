@@ -1,0 +1,262 @@
+.menu {
+    padding-top: 5rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .MenuTop {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .MenuTop img{
+    width: 100vw;
+    height: 70vh;
+  }
+
+  .ProductCard {
+    width: 70vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menuCard {
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    background-color: white;
+    
+  }
+
+  .menuCard div {
+    width: 100%;
+    height: 280px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .menuCard h1,
+  .menuCard p{
+    text-align: center;
+  }
+
+  .menuCard h1{
+      font-size: 25px;
+  }
+
+  .btn-detail button{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: red;
+    height: 50px;
+    width: 180px;
+    color: white;
+    font-size: 20px;
+    margin: 75px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .btn-detail h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -20px;
+  }
+
+  .btn-detail p{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+
+  .btn-detail div{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    margin-bottom: -80px;
+    
+  }
+
+  .btn-detail button:hover{
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+  }
+
+  .btn-order button{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: red;
+    height: 50px;
+    width: 180px;
+    color: white;
+    font-size: 20px;
+    margin: 75px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn-order button:hover{
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+  }
+
+  .card{
+    background-color: white;
+    height: 570px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+
+  .card:hover {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in;
+  }
+
+  .btn-order .app a{
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #eb4e23;
+  }
+
+  .app  {
+    flex: 50%;
+    width: 45%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .btn-order .app a:hover{
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    cursor: pointer;
+  }
+
+  
+  @media only screen and (max-width: 1000px) {
+    .ProductCard {
+      grid-template-columns: 1fr 1fr ;
+    }
+    .MenuTop img{
+      width: 100vw;
+      height: 40vh;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .ProductCard {
+      grid-template-columns: 1fr ifr;
+    }
+    .MenuTop img{
+      width: 100vw;
+      height: 40vh;
+    }
+    .menuCard {
+      border-radius: 15px;
+      width: 150px;
+      height: 200px;
+      margin: 10px;
+      background-color: white;
+    }
+    .menuCard div {
+      height: 160px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .menuCard h1{
+      font-size: 16px;
+    }
+    .menuCard p{
+      font-size: 12px;
+    }
+    .btn-detail button
+    {
+      border: none;
+      border-radius: 5px;
+      justify-content: center;
+      background-color: red;
+      height: 35px;
+      width: 100px;
+      color: white;
+      font-size: 16px;
+      margin: 39px;
+      margin-top: 40px;
+      margin-bottom: 5px;
+    }
+    .btn-detail div{
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 400px;
+      margin-bottom: -70px;
+      
+    }
+    .btn-order button{
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      justify-content: center;
+      background-color: red;
+      height: 35px;
+      width: 100px;
+      color: white;
+      font-size: 16px;
+      margin: 39px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    .card
+    {
+      width: 170px;
+      background-color: white;
+      height: 360px;
+      margin-bottom: 1px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-right: 1px;
+      margin-left: 8px;
+    }
+  }
+
+  

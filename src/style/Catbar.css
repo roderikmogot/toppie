@@ -1,0 +1,60 @@
+.CategoryBar  {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .CategoryBar a {
+    color: black;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #eb4e23;
+  }
+
+  .CategoryBar a:hover{
+    background-color: #eb4e23;
+	  color: white;
+  }
+
+  .CategoryBar a.active{
+    background-color: #eb4e23;
+	  color: white;
+  }
+
+  @media only screen and (max-width: 650px){
+	.CategoryBar{
+		width: 70%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+	}
+  .CategoryBar a {
+    color: black;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 10px;
+    margin-right: 6px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #eb4e23;
+  }
+
+}

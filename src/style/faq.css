@@ -1,0 +1,18 @@
+.FaqTitle h1{
+    font-size: 70px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.FaqAcc{
+    text-align: left;
+    max-width: 650px;
+    padding: 30px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
